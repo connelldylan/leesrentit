@@ -18,19 +18,29 @@
 
         H2{
             padding: 0;
-            margin-bottom: 0px;
+            margin-bottom: 5px;
             margin-top:0px
         }
 
         img{
-            padding: -100px;
+            padding: 0px;
             margin: 0;
+            /*max-width: 100%;
+            height: auto;
+            */
         }
 
         p{
             font-size:22px;
             margin-left: 15%;
             margin-right: 15%;
+            color: white;
+        }
+
+        li{
+            padding-bottom: 15px;
+            text-align: left;
+            color: white;
         }
 
         .colored-text {
@@ -44,8 +54,8 @@
         .side-by-side{
             display: inline-block;
             
-            margin-right: 12.5%;
-            margin-left: 12.5%;
+            margin-right: 10%;
+            margin-left: 10%;
             vertical-align: top; /* Align elements at the top */
             vertical-align: center;
             box-sizing: border-box;
@@ -57,10 +67,11 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: #333;
+            background-color: black;
             color: white;
             margin-top: 0;
-            text-align: Left;    
+            text-align: Left;
+            text-align: middle;    
         }
 
         .sbsTab{
@@ -68,7 +79,7 @@
             
             margin-right: 0.2%;
             margin-left: 0.2%;
-            vertical-align: top; /* Align elements at the top */
+            vertical-align: middle; /* Align elements at the top */
             vertical-align: center;
             box-sizing: border-box;
             text-align: center;
@@ -88,10 +99,10 @@
     <BODY>
         <div class="tab">
             <dive class="sbsTab">
-                <img src="LogoTab.png">
+                <img src="Coffeehouse_Logo.png" width="100" height="auto">
             </dive>   
             <dive class="sbsTab">
-                </p>about.coffeehouse.vote</p>
+                <H2>About</H2>
             </dive>
         </div>
 
@@ -101,25 +112,48 @@
     <CENTER><img src="Coffeehouse_Logo.png"></CENTER>
     <H1><Center>Coffeehouse</Center></H1>
     <H2><Center><span class="colored-text">"For the People"</span></Center></H2>
+    <center><p>The Coffeehouse app empowers voters by letting them easily research their candidates through a bio, endorsements, donors, and voting history. 
+        We are obsessed with creating an objective platform based on facts and letting voters hear directly from the candidate without that information being 
+        changed by the media or other third parties</p></center>
 
     <div class="divider"></div>
 
+    <center><H2>Our Story</H2></center>
     <Center><img src="18Coffeehouse.jpg" width="1049" height="254"></Center>
-    <Center><p> Historians call Coffeehouses the headquarters of the American Revolution. This is where Americans went to talk politics and learn from their leaders. 
-         Coffeehouse will be the digital manifestation of the 18th century Coffeehouse. We believe apathy from the people of America has led to the DNC, the RNC, 
-         \corporations, and the bureaucracies of America to <q> ... subvert the power of the people and to usurp for themselves the reins of government...</q> &nbsp;
-        - George Washington</p></Center>
+    <Center><p> Historians call Coffeehouses the headquarters of the American Revolution. This is where Americans went to talk politics and learn from their leaders. Coffeehouses played a large role in shaping the nation's political landscape.
+        In 2023, Coffeehouse was founded with the goal of revolutionizing the political industry by creating a new channel connecting voters with their candidates. 
+        We believe apathy from the people of America has led to the DNC, the RNC, corporations, and the bureaucracies of America to <q>...subvert the power of the 
+        people and to usurp for themselves the reins of government...</q> - George Washington. We are proud Americans who are fighting to put the power of government 
+        back in the people&apos;s hands. Coffeehouse will be the digital manifestation of the 18th century Coffeehouse.</p></Center>
     
     <div class="divider"></div>
     <div class="divider"></div>
     
     <div class="container">   
         <div class="side-by-side">
-            <H2>App Design</H2>
+            <H2>Interactive Design Prototype</H2>
             <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="400" height="687" src="https://app.uizard.io/p/70b5324d/embed" allowfullscreen></iframe>
         </div>
         <div class="side-by-side">
-            <p>This is the second element.</p>
+            <H2>Product Flow</H2>
+            <ol>
+                <li>When voters sign up, they will input their address. Based on their address, <br> Coffeehouse will show the user their ballots
+                     for upcoming elections. <br> Each ballot shows the polling place address as well as the election date.</li>
+                <li>When a user clicks on a ballot, they will see all of their candidates organized by office. </li>
+                <li>A user clicks on a candidate&apos;s profile picture to research their candidates.</li>
+                <li>If a candidate is their favorite candidate, they click the button on the <br> candidate&apos;s profile picture which will update
+                     the ballot screen with a sticker next <br> to the user&apos;s favorite candidate. Once a candidate has a sticker next <br> to their 
+                     favorite candidate for every office, they have a fully researched ballot. </li>
+                <li>They can then bring their phone to their polling place and vote based <br> on the Coffeehouse app if the precinct allows that.
+                     If not, the user <br> can write down their candidates on a piece of paper, post-it, index-card, etc.</li>
+              </ol>
+              <H2>Important Notes:</H2>
+              <ul>
+                <li>Click on Joe Biden to see what a profile will look like of <br> a candidate who hasn&apos;t signed up for the platform.</li>
+                <li>Click on Donald Trump to see what a profile will look like of <br> a candidate who has signed up for the platform.</li>
+                <li>Click the first ballot square to see what a plurality voting <br> ballot will look like</li>
+                <li>Click the second ballot square to see what a ranked choice voting <br> ballot will look like</li>
+              </ul>
         </div>
     </div> 
     </BODY>

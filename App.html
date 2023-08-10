@@ -1,0 +1,158 @@
+<!App>
+<html>
+<head>
+  <title>App Design Coffeehouse</title>
+  <style>
+    body {
+      background-color: black;
+      margin: 0;
+      padding: 0;
+      color: #AB824E;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Vertically center the content */
+      align-items: center; /* Horizontally center the content */
+      min-height: 100vh; /* Minimum 100% of the viewport height */
+    }
+
+    H1 {
+      font-size: 3.5vw; /* Responsive font size based on viewport width */
+      margin-bottom: 0;
+    }
+
+    H2 {
+      margin-top: 0;
+      font-size: 1.75vw; /* Responsive font size based on viewport width */
+    }
+
+    H3{
+        margin-top: 2vh;
+        font-size: 1.75vw;
+    }
+
+    li{
+        color: white;
+        padding-bottom: 15px;
+        text-align: left;
+        font-size: 2vh;
+    }
+
+    .colored-text {
+      color: white;
+    }
+
+    /* Common tab styles */
+    .tab {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: black;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75vw;
+    }
+
+    /* Styles for the image and text container */
+    .content {
+      display: flex;
+      align-items: center;
+    }
+
+    .image {
+      width: 4%; /* Responsive width based on viewport width */
+      height: auto;
+      margin-right: 0;
+      margin-left: 2%; /* Responsive margin based on viewport width */
+    }
+
+    /* Styles for the buttons */
+    .buttons {
+      display: flex;
+      align-items: center;
+      margin-right: 3%; /* Responsive margin based on viewport width */
+    }
+
+    .button {
+      background-color: #AB824E;
+      color: white;
+      padding: 0.5vw 1.5vw; /* Responsive padding based on viewport width */
+      margin-left: 1vw; /* Responsive margin based on viewport width */
+      border: none;
+      cursor: pointer;
+      border-radius: 20vw; /* Responsive border radius based on viewport width */
+      text-decoration: none;
+    }
+
+    .footer {
+      background-color: #333;
+      text-align: center;
+      padding: 1vh 0; /* Responsive padding based on viewport height */
+      color: #AB824E;
+      width: 100%;
+    }
+
+    .divider::before {
+    content: ""; /* Empty content */
+    display: block;
+    height: 20%;
+    margin: 4vh;
+}
+
+  </style>
+</head>
+<body>
+    <!--------------------------Header---------------------->
+    
+  <div class="tab">
+    <div class="content">
+      <img src="Coffeehouse_Logo.jpg" width="25" height="auto" alt="Image" class="image">
+      <H2 style="margin-left: 1%; margin-top: 3.1%;">About</H2> <!-- Move text to the right 2% -->
+    </div>
+    <div class="buttons">
+      <a href="Home.html" class="button">Home</a>
+      <a href="OurStory.html" class="button">Our Story</a>
+      <a href="App.html" class="button">App</a>
+      <a href="mailto:info@coffeehouse.vote" class="button">Contact</a>
+    </div>
+  </div>
+
+   <!------------------------ Page Content ----------------------------->
+  <div class="divider"></div>
+  <div class="divider"></div>
+
+  <H3>Interactive Design Prototype</H3>
+        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="400vw" 
+        height="687vh" src="https://app.uizard.io/p/70b5324d/embed" allowfullscreen></iframe>
+
+        <H3>Product Flow</H3>
+            <ol>
+                <li>When voters sign up, they will input their address. Based on their address, <br> Coffeehouse will show the user their ballots
+                     for upcoming elections. <br> Each ballot shows the polling place address as well as the election date.</li>
+                <li>When a user clicks on a ballot, they will see all of their candidates organized by office. </li>
+                <li>A user clicks on a candidate&apos;s profile picture to research their candidates.</li>
+                <li>If a candidate is their favorite candidate, they click the button on the <br> candidate&apos;s profile picture which will update
+                     the ballot screen with a sticker next <br> to the user&apos;s favorite candidate. Once a candidate has a sticker next <br> to their 
+                     favorite candidate for every office, they have a fully researched ballot. </li>
+                <li>They can then bring their phone to their polling place and vote based <br> on the Coffeehouse app if the precinct allows that.
+                     If not, the user <br> can write down their candidates on a piece of paper, post-it, index-card, etc.</li>
+            </ol>
+        <H3>Important Notes:</H3>
+            <ul>
+                <li>Click on Joe Biden to see what a profile will look like of <br> a candidate who hasn&apos;t signed up for the platform.</li>
+                <li>Click on Donald Trump to see what a profile will look like of <br> a candidate who has signed up for the platform.</li>
+                <li>Click the first ballot square to see what a plurality voting <br> ballot will look like</li>
+                <li>Click the second ballot square to see what a ranked choice voting <br> ballot will look like</li>
+            </ul>
+
+
+  <!-------------------------Footer------------------->
+  <div class="divider"></div>
+
+  <div class="footer">
+    <p>&copy; 2023 Coffeehouse Corp. All rights reserved.</p>
+  </div>
+</body>
+</html>

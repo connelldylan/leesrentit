@@ -1,9 +1,13 @@
 <!App>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>App Design Coffeehouse</title>
+  <link rel="icon" type="image/jpg" href="Coffeehouse_Logo.jpg">
   <style>
-    body {
+   body {
       background-color: black;
       margin: 0;
       padding: 0;
@@ -42,7 +46,7 @@
     .colored-text {
       color: white;
     }
- 
+
     /* Common tab styles */
     .tab {
       position: fixed;
@@ -63,7 +67,7 @@
       align-items: center;
     }
 
-    .image {
+    .LogoImage {
       width: 4%; /* Responsive width based on viewport width */
       height: auto;
       margin-right: 0;
@@ -101,8 +105,72 @@
     display: block;
     height: 20%;
     margin: 4vh;
-}
+    }
 
+  @media (max-width: 414px) {
+      .homeImage{
+        width: 80%; /* Adjust the desired width */
+        height: auto; /* Maintain aspect ratio */
+        margin-top: 0;
+      }
+
+      .divider::before {
+        /* Empty content */
+        height: 2vh;
+        margin: 0vh;
+      }
+        .LogoImage{
+            width: 30%;
+            height: auto;
+            margin-right: 0.2%;
+            margin-left: 5%;
+        }
+
+        H2 {
+            margin-top: 0;
+            font-size: 6vw; /* Responsive font size based on viewport width */
+        }
+
+        H1 {
+            font-size: 10vw; /* Responsive font size based on viewport width */
+            margin-bottom: 0;
+        }
+
+        H3{
+            margin-top: 3vh;
+            margin-right: 6.5vw;
+            margin-left: 6.5vw;
+            font-size: 7vw; /* Responsive font size based on viewport width */
+            font-weight: normal;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            margin-right: 3%; /* Responsive margin based on viewport width */
+        }
+        
+        .button {
+            background-color: #AB824E;
+            color: white;
+            padding: 1.75vw 1.2vw; /* Responsive padding based on viewport width */
+            margin-left: 4vw; /* Responsive margin based on viewport width */
+            border: none;
+            cursor: pointer;
+            border-radius: 20vw; /* Responsive border radius based on viewport width */
+            text-decoration: none;
+        }
+
+        li{
+        color: white;
+        padding-bottom: 15px;
+        text-align: left;
+        font-size: 2vh;
+        margin-left: 0vw;
+        margin-right: 3.5vw;
+    }
+  
+  }
   </style>
 </head>
 <body>
@@ -110,8 +178,8 @@
     
   <div class="tab">
     <div class="content">
-      <img src="Coffeehouse_Logo.jpg" width="25" height="auto" alt="Image" class="image">
-      <H2 style="margin-left: 1%; margin-top: 3.1%;">About</H2> <!-- Move text to the right 2% -->
+        <img src="Coffeehouse_Logo.jpg" alt="Image" class="LogoImage">
+        <H2 style="margin-left: 1%; margin-top: 2.8vh;">About</H2> <!-- Move text to the right 2% -->
     </div>
     <div class="buttons">
       <a href="index.html" class="button">Home</a>

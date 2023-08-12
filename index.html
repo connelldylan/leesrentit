@@ -1,102 +1,114 @@
+<!Home>
 <html>
 <head>
   <title>Coffeehouse Home</title>
+  <link rel="icon" type="image/jpg" href="Coffeehouse_Logo.jpg">
   <style>
     body {
-      background-color: black;
-      margin: 0;
-      padding: 0;
-      color: #AB824E;
-      display: flex;
-      flex-direction: column;
-      justify-content: center; /* Vertically center the content */
-      align-items: center; /* Horizontally center the content */
-      min-height: 100vh; /* Minimum 100% of the viewport height */
-    }
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    color: #AB824E;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center the content */
+    align-items: center; /* Horizontally center the content */
+    min-height: 100vh; /* Minimum 100% of the viewport height */
+  }
 
-    H1 {
-      font-size: 3.5vw; /* Responsive font size based on viewport width */
-      margin-bottom: 0;
-    }
+  H1 {
+    font-size: 3.5vw; /* Responsive font size based on viewport width */
+    margin-bottom: 0;
+  }
 
-    H2 {
-      margin-top: 0;
-      font-size: 1.75vw; /* Responsive font size based on viewport width */
-    }
+  H2 {
+    margin-top: 0;
+    font-size: 1.75vw; /* Responsive font size based on viewport width */
+  }
 
-    H3{
-    margin-top: 2.5vh;
-      margin-right: 9.5vw;
-      margin-left: 9.5vw;
-      font-size: 1.2vw; /* Responsive font size based on viewport width */
-      font-weight: normal;
-    }
+  H3{
+  margin-top: 2.5vh;
+    margin-right: 9.5vw;
+    margin-left: 9.5vw;
+    font-size: 1.2vw; /* Responsive font size based on viewport width */
+    font-weight: normal;
+  }
 
-    .colored-text {
-      color: white;
-    }
+  .colored-text {
+    color: white;
+  }
 
-    /* Common tab styles */
-    .tab {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background-color: black;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.75vw;
-    }
+  /* Common tab styles */
+  .tab {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75vw;
+  }
 
-    /* Styles for the image and text container */
-    .content {
-      display: flex;
-      align-items: center;
-    }
+  /* Styles for the image and text container */
+  .content {
+    display: flex;
+    align-items: center;
+  }
 
-    .image {
-      width: 4%; /* Responsive width based on viewport width */
-      height: auto;
-      margin-right: 0;
-      margin-left: 2%; /* Responsive margin based on viewport width */
-    }
+  .LogoImage {
+    width: 4%; /* Responsive width based on viewport width */
+    height: auto;
+    margin-right: 0;
+    margin-left: 2%; /* Responsive margin based on viewport width */
+  }
 
-    /* Styles for the buttons */
-    .buttons {
-      display: flex;
-      align-items: center;
-      margin-right: 3%; /* Responsive margin based on viewport width */
-    }
-
-    .button {
-      background-color: #AB824E;
-      color: white;
-      padding: 0.5vw 1.5vw; /* Responsive padding based on viewport width */
-      margin-left: 1vw; /* Responsive margin based on viewport width */
-      border: none;
-      cursor: pointer;
-      border-radius: 20vw; /* Responsive border radius based on viewport width */
-      text-decoration: none;
-    }
-
-    .footer {
-      background-color: #333;
-      text-align: center;
-      padding: 1vh 0; /* Responsive padding based on viewport height */
-      color: #AB824E;
-      width: 100%;
-    }
-
-    .divider::before {
-    content: ""; /* Empty content */
-    display: block;
-    height: 20%;
-
-    margin: 4vh;
+  .homeImage{
+    width: 31%;
+    height: auto;
 }
 
+  /* Styles for the buttons */
+  .buttons {
+    display: flex;
+    align-items: center;
+    margin-right: 3%; /* Responsive margin based on viewport width */
+  }
+
+  .button {
+    background-color: #AB824E;
+    color: white;
+    padding: 0.5vw 1.5vw; /* Responsive padding based on viewport width */
+    margin-left: 1vw; /* Responsive margin based on viewport width */
+    border: none;
+    cursor: pointer;
+    border-radius: 20vw; /* Responsive border radius based on viewport width */
+    text-decoration: none;
+  }
+
+  .footer {
+    background-color: #333;
+    text-align: center;
+    padding: 1vh 0; /* Responsive padding based on viewport height */
+    color: #AB824E;
+    width: 100%;
+  }
+
+  .divider::before {
+  content: ""; /* Empty content */
+  display: block;
+  height: 20%;
+
+  margin: 4vh;
+  }
+    @media (max-width: 414px) {
+      img.homeImage {
+        width: 80%; /* Adjust the desired width */
+        height: auto; /* Maintain aspect ratio */
+      }
+    }
   </style>
 </head>
 <body>
@@ -104,7 +116,7 @@
     
   <div class="tab">
     <div class="content">
-      <img src="Coffeehouse_Logo.jpg" width="25" height="auto" alt="Image" class="image">
+      <img src="Coffeehouse_Logo.jpg" alt="Image" class="LogoImage">
       <H2 style="margin-left: 1%; margin-top: 3.1%;">About</H2> <!-- Move text to the right 2% -->
     </div>
     <div class="buttons">
@@ -120,7 +132,8 @@
   <div class="divider"></div>
   <div class="divider"></div>
 
-  <img src="Coffeehouse_Logo.jpg" width="31%" height="auto"> <!-- Responsive width based on viewport width -->
+  
+  <img src="Coffeehouse_Logo.jpg" class="homeImage"> <!-- Responsive width based on viewport width -->
   <H1><Center>Coffeehouse</Center></H1>
   <H2><Center><span class="colored-text">"For the People"</span></Center></H2>
 

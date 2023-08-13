@@ -111,6 +111,48 @@
     height: auto;
   }
 
+  .sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0; /* Position on the right side */
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+
+  .sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .sidebar a:hover {
+    color: #AB824E;
+  }
+
+  .HamContent {
+    margin-right: 250px; /* Push content to the left */
+    padding: 20px;
+  }
+
+  .openbtn {
+    font-size: 30px;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    right: 15px; /* Position on the right side */
+  }
+
+  .openbtn:hover {
+    color: #AB824E;
+  }
+
   @media (max-width: 430px) {
       .OSImage{
         width: 90%; /* Adjust the desired width */
@@ -149,32 +191,54 @@
         }
 
         .buttons {
-            display: flex;
-            align-items: center;
-            margin-right: 3%; /* Responsive margin based on viewport width */
+            display: none;
         }
         
         .button {
-            background-color: #AB824E;
-            color: white;
-            padding: 1.75vw 1.2vw; /* Responsive padding based on viewport width */
-            margin-left: 4vw; /* Responsive margin based on viewport width */
-            border: none;
-            cursor: pointer;
-            border-radius: 20vw; /* Responsive border radius based on viewport width */
-            text-decoration: none;
+            display: none;
         }
   
   }
+  @media (min-width: 431px){
+    .sidebar {
+    display: none;
+  }
+
+  .sidebar a {
+    display: none;
+  }
+
+  .HamContent {
+    display: none;
+  }
+
+  .openbtn {
+    display: none;
+  }
+  }
   </style>
+  <script>
+    function toggleNav() {
+      var sidebar = document.getElementById("mySidebar");
+      var openbtn = document.querySelector(".openbtn");
+  
+      if (sidebar.style.width === "0px" || sidebar.style.width === "") {
+        sidebar.style.width = "95%";
+        openbtn.innerHTML = "&#10005;"; // Change to X icon
+      } else {
+        sidebar.style.width = "0";
+        openbtn.innerHTML = "&#9776;"; // Change back to hamburger icon
+      }
+    }
+  </script>
 </head>
 <body>
    <!--------------------------Header---------------------->
 
-  <div class="tab">
+   <div class="tab">
     <div class="content">
-        <img src="Coffeehouse_Logo.jpg" alt="Image" class="LogoImage">
-        <H2 style="margin-left: 1%; margin-top: 2.8vh;">About</H2> <!-- Move text to the right 2% -->
+      <img src="Coffeehouse_Logo.jpg" alt="Image" class="LogoImage">
+      <H2 style="margin-left: 1%; margin-top: 2.8vh;">About</H2> <!-- Move text to the right 2% -->
     </div>
     <div class="buttons">
       <a href="index.html" class="button">Home</a>
@@ -182,6 +246,17 @@
       <a href="App.html" class="button">App</a>
       <a href="mailto:info@coffeehouse.vote" class="button">Contact</a>
     </div>
+    <div id="mySidebar" class="sidebar">
+        <a href="index.html">Home</a>
+        <a href="OurStory.html">Our Story</a>
+        <a href="App.html">App</a>
+        <a href="mailto:info@coffeehouse.vote">Contact</a>
+      </div>
+      
+      <div class="HamContent">
+        <span class="openbtn" onclick="toggleNav()">&#9776;</span>
+        <!-- Your page content goes here -->
+      </div>
   </div>
 
   <!------------------------ Page Content ----------------------------->

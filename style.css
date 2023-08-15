@@ -183,7 +183,7 @@
     }
     
     .homeImage {
-      width: 30%; /* Adjust the desired width */
+      width: 60%; /* Adjust the desired width */
       height: auto; /* Maintain aspect ratio */
       margin-top: 12vh;
     }

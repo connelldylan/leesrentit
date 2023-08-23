@@ -1,4 +1,4 @@
-  body {
+    body {
     background-color: black;
     margin: 0;
     padding: 0;
@@ -111,6 +111,31 @@
     border-radius: 20vw; /* Responsive border radius based on viewport width */
     text-decoration: none;
     white-space: nowrap;
+    transition: background-color 0.4s ease, border-color 0.4s ease;
+  }
+
+  .button:hover{
+    background-color: #78502a;
+    border-color: black;
+  }
+
+  .linkButton{
+    background-color: black;
+    color: white;
+    border-color: #AB824E; 
+    padding: 0.5vw 1.5vw; /* Responsive padding based on viewport width */
+    margin-left: 1vw; /* Responsive margin based on viewport width */
+    border: 2px solid #AB824E;
+    cursor: pointer;
+    border-radius: 20vw; /* Responsive border radius based on viewport width */
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.4s ease, border-color 0.4s ease;
+  }
+
+  .linkButton:hover{
+    background-color: #78502a;
+    border-color: #78502a;
   }
 
   .footer {
@@ -167,10 +192,6 @@
     top: 10px;
     right: 15px; /* Position on the right side */
     font-family: 'Roboto', sans-serif;
-  }
-
-  .openbtn:hover {
-    color: #AB824E;
   }
 
 @media (max-width: 430px) {

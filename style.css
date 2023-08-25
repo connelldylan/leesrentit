@@ -1,4 +1,4 @@
-    body {
+  body {
     background-color: black;
     margin: 0;
     padding: 0;
@@ -41,6 +41,17 @@
     margin-left: 30vw;
     margin-right: 30vw;
     font-family: 'Roboto', sans-serif;
+  }
+
+  .list-container {
+    display: flex;
+    justify-content: center;
+    margin-left: 3vh;
+  }
+  
+  .list-container ol {
+    text-align: left;
+    padding: 0;
   }
 
   .colored-text {

@@ -644,8 +644,12 @@ header .navbar-default .navbar-nav li a {
 }
 
 .navigation {
+  position: fixed;
   background: #000;
   padding: 20px 0;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 .navigation .navbar {
   margin-bottom: 0px;

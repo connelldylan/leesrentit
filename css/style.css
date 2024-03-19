@@ -566,7 +566,7 @@ input[type=tel]:focus {
   width: 100%;
   height: 100%;
   background: #1d192c;
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 .owl-dots .owl-dot.active span,
@@ -857,25 +857,23 @@ ul.dropdown-menu li {
   background: url("../images/Kids_In_Gi.jpg") no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  background-position: 0% 100%; /* Default background position */
-  padding: 200px 0;
+  background-position: center center; /* Default background position */
+  padding: 20vh 0;
   position: relative;
 }
 
 /* Reduced padding and changed background position and size for viewports up to 992px wide */
 @media (max-width: 992px) {
   .slider {
-    padding: 150px 0;
-    background-position: 50% 50%; /* Change background position */
-    background-size: auto; /* Change background size if needed */
+    padding: 15vh 0;
   }
 }
 
 /* Further changes for viewports up to 768px wide */
 @media (max-width: 768px) {
   .slider {
-    /* Adjust padding if necessary */
-    background-position: 50% 0%; /* Adjust background position */
+    padding: 10vh 0;
+    background-attachment: scroll; /* Disable fixed background for iOS */
     background-size: auto 60%; /* Adjust background size */
   }
 }

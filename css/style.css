@@ -672,7 +672,7 @@ header .navbar-default .navbar-nav li a {
 
 .navigation {
   position: fixed;
-  background: #000;
+  background: #000080;
   padding: 20px 0;
   top: 0;
   width: 100%;
@@ -697,7 +697,7 @@ header .navbar-default .navbar-nav li a {
     white-space: normal;
   }
 }
-@media (max-width: 390px) {
+@media (max-width: 441px) {
   .brand-title {
     display: none;
   }
@@ -854,22 +854,37 @@ ul.dropdown-menu li {
   }
 }
 .slider {
-  background: url("../images/American_Flag.png") no-repeat;
+  background: url("../images/Kids_In_Gi.jpg") no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  background-position: 10% 0%;
+  background-position: 0% 100%; /* Default background position */
   padding: 200px 0;
   position: relative;
 }
+
+/* Reduced padding and changed background position and size for viewports up to 992px wide */
 @media (max-width: 992px) {
   .slider {
     padding: 150px 0;
+    background-position: 50% 50%; /* Change background position */
+    background-size: auto; /* Change background size if needed */
   }
 }
+
+/* Further changes for viewports up to 768px wide */
+@media (max-width: 768px) {
+  .slider {
+    /* Adjust padding if necessary */
+    background-position: 50% 0%; /* Adjust background position */
+    background-size: auto 60%; /* Adjust background size */
+  }
+}
+
 .slider .block {
   color: #E3E3E4;
   text-align: center;
 }
+
 .slider .block h1 {
   font-weight: 100;
   font-size: 45px;
@@ -878,18 +893,21 @@ ul.dropdown-menu li {
   padding-bottom: 15px;
   text-transform: uppercase;
 }
+
 @media (max-width: 992px) {
   .slider .block h1 {
     font-size: 36px;
     line-height: 46px;
   }
 }
+
 @media (max-width: 768px) {
   .slider .block h1 {
     font-size: 32px;
     line-height: 42px;
   }
 }
+
 .slider .block p {
   margin-bottom: 30px;
   color: #b9b9b9;
@@ -897,6 +915,7 @@ ul.dropdown-menu li {
   line-height: 27px;
   font-weight: 300;
 }
+
 @media (max-width: 992px) {
   .slider .block p {
     font-size: 16px;
@@ -1863,11 +1882,11 @@ ul.dropdown-menu li {
   margin-bottom: 30px;
 }
 .about .staff-info {
-  background-color: #1123c1;
+  background-color: #000080;
   padding: 15px;
 }
 .about .staff-img-border {
-  border: 4px solid #1123c1;
+  border: 4px solid #000080;
   display: block;
   width: 100%;
   height: auto;

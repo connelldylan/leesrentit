@@ -873,8 +873,9 @@ ul.dropdown-menu li {
 @media (max-width: 768px) {
   .slider {
     padding: 10vh 0;
-    background-attachment: scroll; /* Disable fixed background for iOS */
-    background-size: auto 60%; /* Adjust background size */
+    /*background-attachment: scroll; /* Disable fixed background for iOS */
+    background-size: auto 40%;
+    background-position: 15% 15%;
   }
 }
 

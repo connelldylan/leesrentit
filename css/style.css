@@ -1065,13 +1065,14 @@ ul.dropdown-menu li {
   background-position: center center;
   background-size: cover;
   background-color: #F2F2F2;
-  padding: 100px 0;
+  padding-top: 20px;
+  padding-bottom: 45px;
 }
 @media (max-width: 768px) {
   .feature {
     background-image: none !important;
     background-color: #F2F2F2 !important;
-    padding-top: 35px;
+    padding-top: 12px;
     padding-bottom: 120px;
   }
 }
@@ -2983,6 +2984,9 @@ ul.dropdown-menu li {
 }
 .scroll-to-top:hover {
   background-color: #333;
+}
+.partnership {
+  padding-top: 100px;
 }
 .partnership .section-title {
   text-align: center; /* Center the title text horizontally */

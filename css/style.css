@@ -63,6 +63,18 @@ iframe {
   border: 0;
 }
 
+.map {
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .map {
+    height: 170%;
+    width: 100%;
+  }
+}
+
 a,
 a:focus,
 a:hover {
@@ -879,6 +891,7 @@ ul.dropdown-menu li {
   }
   .about.section {
     padding-top: 30px;
+    padding-bottom: 30px;
   }
 }
 
@@ -1058,6 +1071,8 @@ ul.dropdown-menu li {
   .feature {
     background-image: none !important;
     background-color: #F2F2F2 !important;
+    padding-top: 35px;
+    padding-bottom: 120px;
   }
 }
 .feature h2 {
@@ -1864,6 +1879,7 @@ ul.dropdown-menu li {
   text-align: center;
   font-weight: bold;
   font-size: 24px;
+  margin-top: 5%;
 }
 .about .paragraph {
   font-size: 18px;
@@ -1871,14 +1887,6 @@ ul.dropdown-menu li {
 .about .img-border {
   border: 2px solid #ccc;
   margin-bottom: 15px;
-}
-@media (max-width: 767px) {
-  .about .row.align-items-center .col-md-6:first-child {
-    order: 2;
-  }
-  .about .row.align-items-center .col-md-6:last-child {
-    order: 1;
-  }
 }
 .about .staff-member {
   margin-bottom: 30px;
@@ -2949,3 +2957,28 @@ ul.dropdown-menu li {
   background-color: #333;
 }
 /*# sourceMappingURL=style.css.map */
+@media (max-width: 767px) {
+  /* Target the specific pairs within the 'about' section for mobile devices */
+  
+  /* First Pair: Image Right, Text Left on Desktop */
+  .about .row.align-items-center:nth-child(3) .col-md-6:first-child,
+  /* Third Pair: Image Right, Text Left on Desktop */
+  .about .row.align-items-center:nth-child(5) .col-md-6:first-child,
+  /* Fifth Pair: Image Right, Text Left on Desktop, if exists */
+  .about .row.align-items-center:nth-child(7) .col-md-6:first-child,
+  /* Seventh Pair: Image Right, Text Left on Desktop, if exists */
+  .about .row.align-items-center:nth-child(9) .col-md-6:first-child {
+    order: 1;
+  }
+
+  /* Second Pair: Image Left, Text Right on Desktop */
+  .about .row.align-items-center:nth-child(4) .col-md-6:last-child,
+  /* Fourth Pair: Image Left, Text Right on Desktop */
+  .about .row.align-items-center:nth-child(6) .col-md-6:last-child,
+  /* Sixth Pair: Image Left, Text Right on Desktop, if exists */
+  .about .row.align-items-center:nth-child(8) .col-md-6:last-child,
+  /* Eighth Pair: Image Left, Text Right on Desktop, if exists */
+  .about .row.align-items-center:nth-child(10) .col-md-6:last-child {
+    order: 2;
+  }
+}

@@ -284,7 +284,7 @@ input[type=tel]:focus {
 }
 
 .section {
-  padding: 100px 0;
+  padding: 3% 0;
 }
 
 .section-sm {
@@ -1879,9 +1879,11 @@ ul.dropdown-menu li {
   font-weight: bold;
   font-size: 24px;
   margin-top: 5%;
+  color: #fff;
 }
 .about .paragraph {
   font-size: 18px;
+  color: #b5b5b5;
 }
 .about .img-border {
   border: 2px solid #ccc;
@@ -1992,7 +1994,7 @@ ul.dropdown-menu li {
   z-index: 1; /* Set z-index to 1 */
 }
 .about .btn-instagram, .btn-facebook {
-  color: #000; /* White text */
+  color: #fff; /* White text */
   margin-left: 10px; /* Spacing between buttons */
   padding: 10px 15px; /* Larger padding for bigger buttons */
   font-size: 22px; /* Larger font size for the text inside the buttons */
@@ -2020,7 +2022,16 @@ ul.dropdown-menu li {
   background-color: #1123c1; /* Solid blue background on hover */
   color: white; /* White text color on hover */
 }
-
+.alt-img {
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 768px) {
+  .alt-img {
+    width: 100%;
+    height: auto;
+  }
+}
 /* Custom button styling */
 .schedule .email-button {
   display: block; /* Makes the link behave like a block element */
@@ -2972,6 +2983,50 @@ ul.dropdown-menu li {
 }
 .scroll-to-top:hover {
   background-color: #333;
+}
+.partnership .section-title {
+  text-align: center; /* Center the title text horizontally */
+  font-weight: bold;
+  font-size: 24px;
+  margin: 0; /* Remove any margin to reduce space */
+}
+
+.partnership .section-image img {
+  max-width: 100%; /* Ensure the image is not larger than its container */
+  height: auto;
+  margin: 0 auto; /* Center the image horizontally and remove any margin to reduce space */
+}
+
+/* Flexbox container */
+.partnership .row > .col-12 {
+  display: flex; /* Enable Flexbox */
+  align-items: center; /* Vertically center the items */
+  justify-content: center; /* Center the items horizontally */
+  padding: 0; /* Remove padding */
+  flex-wrap: wrap; /* Allow the items to wrap if needed */
+}
+
+/* Title and image columns */
+.partnership .section-title, .partnership .section-image {
+  flex: 1; /* Allow both the title and image to grow and take up equal space */
+  min-width: 0; /* Prevent flex items from growing too large */
+  text-align: center; /* Center the content within each flex item */
+}
+
+/* Adjustments for mobile view */
+@media (max-width: 768px) {
+  .partnership .row > .col-12 {
+    flex-direction: column; /* Stack the items vertically on smaller screens */
+  }
+
+  .partnership .section-title {
+    margin-bottom: 20px; /* Add some space between the title and the image */
+  }
+
+  .partnership .section-image img {
+    max-width: 80%; /* Adjust the image width on smaller screens */
+    margin-top: 20px; /* Add some space between the image and the title */
+  }
 }
 /*# sourceMappingURL=style.css.map */
 @media (max-width: 767px) {

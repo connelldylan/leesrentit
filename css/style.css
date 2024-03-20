@@ -64,8 +64,8 @@ iframe {
 }
 
 .map {
-  height: 100%;
-  width: 100%;
+  height: 110%;
+  width: 110%;
 }
 
 @media (max-width: 768px) {
@@ -1288,7 +1288,6 @@ ul.dropdown-menu li {
 .counter-box span {
   color: #555;
 }
-
 .contact-form {
   padding-top: 70px;
   padding-bottom: 35px;
@@ -2041,6 +2040,24 @@ ul.dropdown-menu li {
   background-color: #1123c1; /* Solid blue background on hover */
   color: white; /* White text color on hover */
 }
+
+/* Contact Section Styles */
+.contact-section .section-header {
+  text-align: center; /* Centers the 'Contact Us!' header */
+  margin-top: 5%;
+  margin-bottom: 2%;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .contact-section .section-header {
+    margin-top: 23%;
+    margin-bottom: 5%;
+  }
+  .contact-section {
+    padding-bottom: 50;
+  }
+}
+/* You can add more styles specific to the contact section here */
 
 .faq-item {
   width: 100%; /* Set to desired width for consistency */
@@ -2934,11 +2951,11 @@ ul.dropdown-menu li {
 .scroll-to-top {
   position: fixed;
   bottom: 30px;
-  right: 30px;
+  left: 30px;
   z-index: 999;
   height: 40px;
   width: 40px;
-  background: #655E7A;
+  background: #000080;
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
@@ -2950,7 +2967,7 @@ ul.dropdown-menu li {
 @media (max-width: 480px) {
   .scroll-to-top {
     bottom: 15px;
-    right: 15px;
+    left: 15px;
   }
 }
 .scroll-to-top:hover {

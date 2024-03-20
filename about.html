@@ -83,7 +83,7 @@
 
 <section class="about-us">
   <div class="slider">
-    <video autoplay muted loop id="background-video">
+    <video autoplay muted loop playsinline id="background-video">
       <source src="videos/Huck_Match.mp4" type="video/mp4">
     </video>
     <div class="container">
@@ -148,10 +148,14 @@
           <h3>Proud Tom Deblass Affiliate</h3>
         </div>
         <p class="paragraph">
-          (Some text about Tom Deblass, preferably up to 3 lines doifhdfodnfldnflnflndlnfldnlfnlkdnlfndlkfn)
+          La Crosse American Jiu Jitsu is the only gym in the La Crosse/Winona area to be a Tom Deblass Affiliate. DeBlass is a Brazilian Jiu-Jitsu competitor that has won in
+          the Pan American and World Championships. DeBlass also captured two titles in Ring Of Combat and got called to fight in the UFC. He is one of the only people in history to win the North American trials 3 times.
         </p>
         <a class="about btn btn-instagram" href="https://www.instagram.com/tomdeblass/" target="_blank">
           <i class="fab fa-instagram"></i> @tomdeblass
+        </a>
+        <a class="about btn btn-instagram" href="https://www.tomdeblass.com" target="_blank" style="text-decoration: underline; color: blue;">
+          tomdeblass.com
         </a>
       </div>
     </div>
@@ -231,7 +235,7 @@
       </div>
       <!-- Column for Google Maps -->
       <div class="col-md-6">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d966.9735207799008!2d-91.24924164070806!3d43.811880079580405!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87f955c6eaa65f21%3A0xc2843c9e6ed4fb46!2sLa%20Crosse%20American%20Jiu%20Jitsu!5e0!3m2!1sen!2sus!4v1709697168704!5m2!1sen!2sus" width="100%" height="120%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d966.9735207799008!2d-91.24924164070806!3d43.811880079580405!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87f955c6eaa65f21%3A0xc2843c9e6ed4fb46!2sLa%20Crosse%20American%20Jiu%20Jitsu!5e0!3m2!1sen!2sus!4v1709697168704!5m2!1sen!2sus" width="100%" height="120%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </div>
@@ -274,6 +278,57 @@
     <script src="plugins/google-map/map.js"></script>
 
     <script src="js/script.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var backgroundVideo = document.getElementById('background-video');
+        var aboutUsSection = document.querySelector('.about-us');
+    
+        // Function to play video if in view
+        function playVideoIfInView(isIntersecting) {
+          if (isIntersecting) {
+            backgroundVideo.play().catch(function(error) {
+              // Autoplay was prevented.
+              console.log('Autoplay was prevented.');
+            });
+          } else {
+            backgroundVideo.pause();
+          }
+        }
+    
+        // Options for the IntersectionObserver
+        var options = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.5
+        };
+    
+        // Callback function for IntersectionObserver
+        var callback = function (entries, observer) {
+          entries.forEach(entry => {
+            playVideoIfInView(entry.isIntersecting);
+          });
+        };
+    
+        // Create the Intersection Observer
+        var observer = new IntersectionObserver(callback, options);
+    
+        // Observe the About Us section
+        observer.observe(aboutUsSection);
+    
+        // Try to play video on initial load if the About Us section is in view
+        playVideoIfInView(aboutUsSection.getBoundingClientRect().top < window.innerHeight);
+      });
+    </script>
+
+<!-- Start of OpenWidget (www.openwidget.com) code -->
+<script>
+  window.__ow = window.__ow || {};
+  window.__ow.organizationId = "27d5823a-26ec-4d21-92c2-e0842bd4634f";
+  ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[OpenWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.openwidget.com/openwidget.js",t.head.appendChild(n)}};!n.__ow.asyncInit&&e.init(),n.OpenWidget=n.OpenWidget||e}(window,document,[].slice))
+</script>
+<noscript>You need to <a href="https://www.openwidget.com/enable-javascript" rel="noopener nofollow">enable JavaScript</a> to use the communication tool powered by <a href="https://www.openwidget.com/" rel="noopener nofollow" target="_blank">OpenWidget</a></noscript>
+<!-- End of OpenWidget code -->
 
     </body>
 

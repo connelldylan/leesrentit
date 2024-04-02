@@ -1359,6 +1359,17 @@ ul.dropdown-menu li {
   height: 300px;
 }
 
+.map-view {
+  width: 200%;
+  height: 345px;
+}
+
+@media (max-width: 768px) {
+  .map-view {
+    width: 100%
+  }
+}
+
 .contact-box {
   padding-top: 35px;
   padding-bottom: 58px;

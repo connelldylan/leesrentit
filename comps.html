@@ -135,13 +135,64 @@
         <h3 style="margin-bottom: 20px">
           All leg submissions are prohibited with the exception of straight ankle locks.
         </h3>
-        <a href="https://forms.gle/DUJErV9Td9NM1Buc6" class="email-button" target="_blank">Click Here to Sign-Up</a>
       </div>
       <div class="col-md-6">
         <img src="images/White_belt_flyer.png" alt="White_belt_flyer" class="img-fluid alt-img">      </div>
     </div>
   </div>
 </section>
+
+<!-- Wrestling Match Queue Section -->
+<div id="wrestlingQueue" style="text-align: center; padding: 20px; margin: 20px auto; max-width: 600px; background-color: white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+  <div class="match-status">
+      <h2>Current Match</h2>
+      <p id="currentWrestler">Loading...</p>
+  </div>
+  <div class="match-status">
+      <h2>On Deck</h2>
+      <p id="onDeckWrestler">Loading...</p>
+  </div>
+  <div class="match-status">
+      <h2>In the Hole</h2>
+      <p id="inHoleWrestler">Loading...</p>
+  </div>
+</div>
+
+<script>
+  const apiKey = 'AIzaSyDmIpI9B5bVHWpOqVo4BDTVpMBWEeghyeA';
+  const spreadsheetId = '1xnXmG2nCAEji32lU9ORCDHW35Tq8lpZlkhTWlNhiVEQ';
+  const range = 'Sheet1!A1:C1';
+
+  async function fetchWrestlingDataFromGoogleSheets() {
+      const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`;
+      try {
+          const response = await fetch(url);
+          const data = await response.json();
+          const rows = data.values;
+          if (rows.length > 0) {
+              document.getElementById('currentWrestler').textContent = rows[0][0]; // Currently Wrestling
+              document.getElementById('onDeckWrestler').textContent = rows[0][1]; // On Deck
+              document.getElementById('inHoleWrestler').textContent = rows[0][2]; // In the Hole
+          } else {
+              console.log('No data found.');
+          }
+      } catch (error) {
+          console.error('Error fetching data from Google Sheets:', error);
+      }
+  }
+
+  window.onload = fetchWrestlingDataFromGoogleSheets;
+</script>
+
+<!-- Instagram Embed Section with Title and Clickable Link -->
+<div style="display: flex; flex-direction: column; align-items: center; margin-top: 50px;">
+  <h2 style="text-align: center; margin-bottom: 20px;">For the livestream of this event, go to <a href="https://www.instagram.com/lacrosseamericanjiujitsu/?utm_source=ig_embed&utm_campaign=invalid&ig_rid=bfb24f3d-f367-418e-9268-915a99a658d0" target="_blank">@lacrosseamericanjiujitsu</a> on Instagram</h2>
+  <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/lacrosseamericanjiujitsu/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+    <!-- Content inside the blockquote remains unchanged -->
+  </blockquote>
+  <script async src="//www.instagram.com/embed.js"></script>
+</div>
+
 
 <footer class="footer">
 	<div class="container">

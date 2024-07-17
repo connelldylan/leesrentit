@@ -2017,6 +2017,30 @@ ul.dropdown-menu li {
   background-color: #faae0a; /* Light gray background */
   color: #fff; /* White text */
 }
+
+.btn-instagram-page {
+  background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.btn-instagram-page:hover {
+  background: linear-gradient(45deg, #fd1d1d, #fcb045, #833ab4);
+}
+
+.btn-instagram-page i {
+  margin-right: 8px;
+}
+
 .about .email-button {
   display: block; /* Makes the link behave like a block element */
   width: max-content; /* Ensures the width fits the content */

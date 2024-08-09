@@ -866,11 +866,11 @@ ul.dropdown-menu li {
   }
 }
 .slider {
-  background: url("../images/Kids_In_Gi.jpg") no-repeat;
+  background: url("../images/home_background.JPG") no-repeat;
   background-size: cover;
   background-attachment: fixed;
   background-position: center center; /* Default background position */
-  padding: 20vh 0;
+  padding: 30vh 0;
   position: relative;
 }
 
@@ -884,10 +884,10 @@ ul.dropdown-menu li {
 /* Further changes for viewports up to 768px wide */
 @media (max-width: 768px) {
   .slider {
-    padding: 15vh 0;
+    padding: 13vh 0;
     background-attachment: scroll; /* Disable fixed background for iOS */
     background-size: auto 80%;
-    background-position: 15% 150%;
+    background-position: 55% 140%;
   }
   .about.section {
     padding-top: 30px;

@@ -134,7 +134,7 @@ input[type=tel]:focus {
 /* Ensure icons are properly aligned with text */
 .navbar .nav-link .fab {
   margin-right: 5px;
-  font-size: 22px; /* Larger icon size */
+  font-size: 1.9em; /* Larger icon size */
 }
 .nav-phone {
   font-size: 2em; /* Increase font size */
@@ -684,7 +684,7 @@ header .navbar-default .navbar-nav li a {
 
 .navigation {
   position: fixed;
-  background: #000080;
+  background: #9a042f;
   padding: 20px 0;
   top: 0;
   width: 100%;
@@ -742,7 +742,7 @@ header .navbar-default .navbar-nav li a {
   transition: 0.3s;
 }
 .navigation .navbar .navbar-nav > li > a:hover, .navigation .navbar .navbar-nav > li > a:focus {
-  color: #c32f1b;
+  color: #000;
   background: transparent;
 }
 .navigation .navbar .navbar-nav li.active > a {
@@ -866,7 +866,7 @@ ul.dropdown-menu li {
   }
 }
 .slider {
-  background: url("../images/home_background.JPG") no-repeat;
+  background: url("../images/IMG_4182.jpg") no-repeat;
   background-size: cover;
   background-attachment: fixed;
   background-position: center center; /* Default background position */
@@ -884,10 +884,10 @@ ul.dropdown-menu li {
 /* Further changes for viewports up to 768px wide */
 @media (max-width: 768px) {
   .slider {
-    padding: 13vh 0;
+    padding: 16vh 0;
     background-attachment: scroll; /* Disable fixed background for iOS */
-    background-size: auto 80%;
-    background-position: 55% 140%;
+    background-size: auto 90%;
+    background-position: 55% 280%;
   }
   .about.section {
     padding-top: 30px;
@@ -1093,8 +1093,8 @@ ul.dropdown-menu li {
   width: max-content; /* Ensures the width fits the content */
   margin: 20px auto; /* Centers the button and adds some space above and below */
   padding: 10px 20px; /* Padding inside the button */
-  border: 3px solid #1123c1; /* Blue border */
-  color: #1123c1; /* Blue text color to match the border */
+  border: 3px solid #9a042f; /* Blue border */
+  color: #9a042f; /* Blue text color to match the border */
   text-align: center; /* Center the text inside the button */
   text-decoration: none; /* Removes underline from the link */
   border-radius: 25px; /* Rounded edges */
@@ -1102,7 +1102,7 @@ ul.dropdown-menu li {
 }
 /* Button hover state */
 .feature .email-button:hover {
-  background-color: #1123c1; /* Solid blue background on hover */
+  background-color: #9a042f; /* Solid blue background on hover */
   color: white; /* White text color on hover */
 }
 
@@ -1905,11 +1905,11 @@ ul.dropdown-menu li {
   margin-bottom: 30px;
 }
 .about .staff-info {
-  background-color: #000080;
+  background-color: #9a042f;
   padding: 15px;
 }
 .about .staff-img-border {
-  border: 4px solid #000080;
+  border: 4px solid #9a042f;
   display: block;
   width: 100%;
   height: auto;
@@ -3074,7 +3074,7 @@ ul.dropdown-menu li {
   z-index: 999;
   height: 40px;
   width: 40px;
-  background: #000080;
+  background: #9a042f;
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
@@ -3206,5 +3206,5 @@ ul.dropdown-menu li {
 
 .carousel-control-prev:hover .carousel-control-prev-icon,
 .carousel-control-next:hover .carousel-control-next-icon {
-  background-color: blue; /* Change background color to blue on hover */
+  background-color: #9a042f; /* Change background color to blue on hover */
 }

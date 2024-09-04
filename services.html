@@ -4,17 +4,16 @@
   <meta charset="utf-8">
   <title>Lee's Rent It | Services</title>
 
-  <!-- Mobile Specific Metas
-  ================================================== -->
+  <!-- Mobile Specific Metas -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="Lee's Rent It Home">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="author" content="Lee's Rent It Admin">
   <meta name="theme-name" content="Lee's Rent It">
   <meta name="generator" content="Lee's Rent It">
+  
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="images/profile_pic.png" />
-
 
   <!-- bootstrap.min css -->
   <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
@@ -28,13 +27,88 @@
   <link rel="stylesheet" href="plugins/slick/slick.css">
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
-  <!--Font Awesome (For Facebook and Instagram Icons)-->
+  <!-- Font Awesome (For Facebook and Instagram Icons) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Volkhov:ital@1&display=swap");
+    body {
+      line-height: 1.65;
+      font-family: "Roboto", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+    }
+    h1 {
+      font-size: 40px;
+    }
+    h2 {
+      font-size: 28px;
+    }
+    h3 {
+      font-size: 20px;
+    }
+    p {
+      color: #7B7B7B;
+      font-size: 15px;
+      font-family: "Roboto", sans-serif;
+      line-height: 1.7;
+    }
+    ol, ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    a, a:focus, a:hover {
+      text-decoration: none;
+      outline: 0;
+      color: #655E7A;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #fff;
+      padding: 2%;
+      border: 4px solid #000;
+    }
+    .category {
+      margin-bottom: 40px;
+      border: 1px solid #ddd;
+      background-color: #f9f9f9;
+      padding: 15px;
+    }
+    .category h2 {
+      background-color: #9a042f;
+      color: #fff;
+      padding: 10px;
+      margin: -15px -15px 10px;
+    }
+    .tool-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .tool-list li {
+      padding: 10px;
+      border: 1px solid #ddd;
+      flex: 1 1 45%;
+      box-sizing: border-box;
+      margin: 5px;
+      background-color: #fff;
+    }
+    .tool-list li:nth-child(odd) {
+      border-right: 1px solid #ddd;
+    }
+    .tool-list li:last-child {
+      border-bottom: none;
+    }
+  </style>
 </head>
 
 <body id="body">
-
   <header class="navigation">
     <div class="container">
       <div class="row">
@@ -75,11 +149,167 @@
     </div>
   </header>
 
-  <footer class="footer">
-    <div class="container">
+  <div class="container" style="padding: 0px; width: 93%">
+    <h1 style="margin-top: 15vh; background-color: #9a042f;">Tool Rental Listing</h1>
+
+    <div class="category" id="contractor">
+      <h2>Contractor</h2>
+      <ul class="tool-list">
+        <li>Air Compressors (All types)</li>
+        <li>Air Tools (Assorted)</li>
+        <li>Airless Paint Sprayers</li>
+        <li>Cement Finishers</li>
+        <li>Compactors (Gas & Manual)</li>
+        <li>Concrete Vibrator</li>
+        <li>Generators</li>
+        <li>Hoses (Assorted)</li>
+        <li>Lifts (Bucket & Material)</li>
+        <li>Mixers (Cement)</li>
+        <li>Nailers (Air & Manual)</li>
+        <li>Pallet Jacks</li>
+        <li>Saws (chain/cement/brick)</li>
+        <li>Scaffolding</li>
+        <li>Tractors (Loader/Auger/Backhoe)</li>
+        <li>Trenchers</li>
+        <li>Welders</li>
+      </ul>
+    </div>
+
+    <div class="category" id="lawn-garden">
+      <h2>Lawn & Garden</h2>
+      <ul class="tool-list">
+        <li>Aerators (Gas & Manual)</li>
+        <li>Bed Edgers</li>
+        <li>Chippers (Large & Medium)</li>
+        <li>Fence Stretchers</li>
+        <li>Garden Sprayers</li>
+        <li>Hedge Trimmers</li>
+        <li>Lawn Edgers</li>
+        <li>Lawn Rollers</li>
+        <li>Lawn Seeders</li>
+        <li>Leaf Blowers</li>
+        <li>Log Splitters</li>
+        <li>Mowers (Various Types)</li>
+        <li>Post Drivers</li>
+        <li>Posthole Diggers (Assorted)</li>
+        <li>Slitter/Seeders</li>
+        <li>Sod Cutters (Gas & Manual)</li>
+        <li>Stump Cutters</li>
+        <li>Thatchers (Power Lawn Rake)</li>
+        <li>Tillers & Cultivators</li>
+        <li>Weed Trimmers</li>
+      </ul>
+    </div>
+
+    <div class="category" id="miscellaneous">
+      <h2>Miscellaneous</h2>
+      <ul class="tool-list">
+        <li>Animal Clippers</li>
+        <li>Animal Cages</li>
+        <li>Animal Traps (Small & Large)</li>
+        <li>Bike Racks</li>
+        <li>Crutches</li>
+        <li>Fans (Pedestal & Carpet)</li>
+        <li>Movie Screens</li>
+        <li>Walkers</li>
+        <li>Wheelchairs</li>
+      </ul>
+    </div>
+
+    <div class="category" id="party">
+      <h2>Party</h2>
+      <ul class="tool-list">
+        <li>Balloon Fillers</li>
+        <li>Chairs (Folding)</li>
+        <li>Coffee Makers</li>
+        <li>Grills (Open & CLosed)</li>
+        <li>Icing Tubs</li>
+        <li>Roaster Ovens</li>
+        <li>Rotisseries</li>
+        <li>Super Coolers</li>
+        <li>Tables (Assorted)</li>
+        <li>Volleyball Net</li>
+      </ul>
+    </div>
+
+    <div class="category" id="trailers">
+      <h2>Trailers</h2>
+      <ul class="tool-list">
+        <li>Bar Lights (Rental)</li>
+        <li>Loading Ramps</li>
+        <li>Tow Chains (Assorted)</li>
+        <li>Tow Dollies</li>
+        <li>Trailer Hitches & Wiring</li>
+        <li>Trailers (Assorted)</li>
+      </ul>
+    </div>
+
+    <div class="category" id="general-rentals">
+      <h2>General Rentals</h2>
+      <ul class="tool-list">
+        <li>Air tanks (portable)</li>
+        <li>Auto Polishers/Sanders</li>
+        <li>Ball Joint Presses</li>
+        <li>Brakes (Alum/Sheet Metal)</li>
+        <li>Builders Level (Transit Type)</li>
+        <li>Carpet Tools</li>
+        <li>Car Top Carriers (Enclosed)</li>
+        <li>Come-a-longs (Chain & Cable)</li>
+        <li>Conduit Benders</li>
+        <li>Dollies (Various Types)</li>
+        <li>Drills (Various Types)</li>
+        <li>Drywall Lifts</li>
+        <li>Drywall Screw Guns</li>
+        <li>Engine Cranes & Hoists</li>
+        <li>Extension Cords</li>
+        <li>Floor Scrubbers/Sanders</li>
+        <li>Furniture Clamps</li>
+        <li>Floor Tools (Carpet/Tile)</li>
+        <li>Hand Tools (Various Types)</li>
+        <li>Heaters (Various Types)</li>
+        <li>Heat Guns</li>
+        <li>Hopper Guns (Texture & Sand)</li>
+        <li>Insulation Blowers</li>
+        <li>Jacks (Various Types)</li>
+        <li>Ladders & Accs. (Assorted Types)</li>
+        <li>Metal Detectors</li>
+        <li>Planers (Electric & Manual)</li>
+        <li>Plumbing Tools</li>
+        <li>Pressure Washers (Assorted Sizes)</li>
+        <li>Pumps (Assorted Types)</li>
+        <li>Rivet Guns</li>
+        <li>Roofer's Tools</li>
+        <li>Rotary Hammers</li>
+        <li>Rug & Upholstery Cleaners</li>
+        <li>Sandblasters</li>
+        <li>Sanders (Various Types)</li>
+        <li>Saws (Various Types)</li>
+        <li>Sheet Metal Shears</li>
+        <li>Shop Vacs (Wet & Dry)</li>
+        <li>Snakes & Augers</li>
+        <li>Spring Compressors</li>
+        <li>Stair Cleaners</li>
+        <li>Staplers (Assorted Types)</li>
+        <li>Strapping Tools</li>
+        <li>Threaders (Assorted)</li>
+        <li>Tile Cutters (Assorted)</li>
+        <li>Torches (Cut & Weld)</li>
+        <li>Torque Wrenches</li>
+        <li>Turbo Dryers</li>
+        <li>Vises (Plumber's)</li>
+        <li>Wallpaper Steamers</li>
+        <li>Water Ram</li>
+        <li>Weed Burners</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer class="footer" style="color: #fff;">
+    <div class="container" style="background-color: #fff; width: 80%; margin: 0 auto; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
       <div class="row">
         <div class="col-md-12">
-          <p class="copyright mb-0">Copyright 2024 &copy; Lee's Rent It LLC. All rights reserved.
+          <p class="copyright mb-0">
+            Copyright 2024 &copy; Lee's Rent It LLC. All rights reserved.
             <br> Contact: leesrentit@outlook.com
           </p>
         </div>
@@ -87,32 +317,28 @@
     </div>
   </footer>
 
-<!--Scroll to top-->
-<div id="scroll-to-top" class="scroll-to-top">
-	<span class="icon ion-ios-arrow-up"></span>
-</div>
+  <!-- Scroll to top -->
+  <div id="scroll-to-top" class="scroll-to-top">
+    <span class="icon ion-ios-arrow-up"></span>
+  </div>
 
-    <!-- 
-    Essential Scripts
-    =====================================-->
-
-
-    <!-- Main jQuery -->
-    <script src="plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 3.1 -->
-    <script src="plugins/bootstrap/bootstrap.min.js"></script>
-    <!-- slick Carousel -->
-    <script src="plugins/slick/slick.min.js"></script>
-    <script src="plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
-    <!-- filter -->
-    <script src="plugins/shuffle/shuffle.min.js"></script>
-    <script src="plugins/SyoTimer/jquery.syotimer.min.js"></script>
-    <!-- Google Map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
-    <script src="plugins/google-map/map.js"></script>
-
-    <script src="js/script.js"></script>
-
-  </body>
-
+  <!-- Essential Scripts -->
+  <!-- Main jQuery -->
+  <script src="plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 3.1 -->
+  <script src="plugins/bootstrap/bootstrap.min.js"></script>
+  <!-- slick Carousel -->
+  <script src="plugins/slick/slick.min.js"></script>
+  <!-- Magnify Popup -->
+  <script src="plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+  <!-- Filter -->
+  <script src="plugins/shuffle/shuffle.min.js"></script>
+  <!-- SyoTimer -->
+  <script src="plugins/SyoTimer/jquery.syotimer.min.js"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
+  <script src="plugins/google-map/map.js"></script>
+  <!-- Custom Script -->
+  <script src="js/script.js"></script>
+</body>
 </html>

@@ -1056,7 +1056,6 @@ ul.dropdown-menu li {
 }
 
 .feature {
-  background: url("../img/featue-bg.jpg");
   background-position: 50% 94px;
   display: block;
   position: relative;
@@ -1064,14 +1063,12 @@ ul.dropdown-menu li {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  background-color: #F2F2F2;
   padding-top: 20px;
   padding-bottom: 45px;
 }
 @media (max-width: 768px) {
   .feature {
     background-image: none !important;
-    background-color: #F2F2F2 !important;
     padding-top: 12px;
     padding-bottom: 120px;
   }
@@ -2519,10 +2516,8 @@ ul.dropdown-menu li {
 }
 
 .bg-2 {
-  background: url("../images/featue-bg.jpg");
   background-size: cover;
   background-attachment: fixed;
-  background-color: #F2F2F2;
 }
 
 .widget {
@@ -3035,7 +3030,7 @@ ul.dropdown-menu li {
 .footer {
   background: #F5F5F5;
   text-align: center;
-  padding: 80px 0;
+  padding: 40px 0;
 }
 .footer p {
   font-size: 13px;

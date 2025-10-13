@@ -212,6 +212,97 @@ input[type=tel]:focus {
   box-shadow: none;
 }
 
+.centered-image-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.bordered-image {
+  max-width: 30%;
+  height: auto;
+  border: 6px solid #9a042f; /* red inner border */
+  box-shadow: 0 0 0 6px black; /* black outer border */
+  border-radius: 6px; /* optional, adds softer corners */
+}
+
+/* --- Mobile Optimization --- */
+@media (max-width: 600px) {
+  .centered-image-section {
+    padding: 30px;
+  }
+
+  .bordered-image {
+    max-width: 100%;
+    border: 3px solid #9a042f;
+    box-shadow: 0 0 0 4px black;
+    border-radius: 4px;
+  }
+}
+
+/* --- Flyer Section --- */
+.flyer-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 0;
+  margin-bottom: 28px;           /* space above Tool Rental Listing */
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+
+.flyer-body {
+  padding: 18px 18px 22px;
+  text-align: center;
+}
+
+.flyer-line {
+  font-weight: 600;
+  margin: 6px 0;
+  line-height: 1.2;
+  font-size: clamp(18px, 2.6vw, 28px);
+}
+
+.flyer-line.strong {
+  font-size: clamp(20px, 3vw, 32px);
+  text-transform: none;
+}
+
+.flyer-list {
+  margin: 16px auto 0;
+  padding: 0;
+  max-width: 920px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* 2 columns on desktop */
+  gap: 8px 20px;
+  text-align: left;
+}
+
+.flyer-list li {
+  background: #f9f9f9;
+  border: 1px solid #e7e7e7;
+  border-radius: 6px;
+  padding: 10px 12px;
+  line-height: 1.35;
+  font-size: clamp(14px, 1.4vw, 16px);
+}
+
+.flyer-call {
+  margin-top: 6px;
+  border-radius: 999px;
+  padding: 10px 18px;
+}
+
+/* --- Mobile tweaks --- */
+@media (max-width: 768px) {
+  .flyer-list {
+    grid-template-columns: 1fr;  /* stack to one column on tablets/phones */
+    gap: 10px;
+  }
+  .flyer-body {
+    padding: 14px;
+  }
+}
+
 .mt-10 {
   margin-top: 20px;
 }

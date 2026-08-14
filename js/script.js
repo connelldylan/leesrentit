@@ -28,6 +28,8 @@ $(document).ready(function () {
 				scrollToTop.fadeOut(100);
 			}
 		}
+		// Condense the navbar once the page scrolls past the hero
+		$('.navigation').toggleClass('scrolled', $(window).scrollTop() > 40);
 	});
 	// scroll-to-top
 	if ($('#scroll-to-top').length) {
@@ -138,5 +140,88 @@ $(document).ready(function () {
 	$(window).on('scroll', function () {
 		counter();
 	});
+
+	// Sync the navbar's condensed state on initial load (e.g. restored scroll position)
+	$('.navigation').toggleClass('scrolled', $(window).scrollTop() > 40);
+
+	// Scroll-reveal: fade/slide sections and staggered groups into view once
+	if ('IntersectionObserver' in window) {
+		var revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
+		// On mobile, trigger as soon as a section's top crosses ~75% down the
+		// viewport (i.e. after scrolling roughly a quarter-screen into it),
+		// regardless of how tall the section is. Desktop keeps the original,
+		// slightly later, area-based trigger.
+		var isMobileReveal = $(window).width() < 768;
+		var revealOptions = isMobileReveal
+			? { threshold: 0, rootMargin: '0px 0px -25% 0px' }
+			: { threshold: 0.15, rootMargin: '0px 0px -8% 0px' };
+		var revealObserver = new IntersectionObserver(function (entries, observer) {
+			entries.forEach(function (entry) {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('is-visible');
+					observer.unobserve(entry.target);
+				}
+			});
+		}, revealOptions);
+		revealEls.forEach(function (el) {
+			revealObserver.observe(el);
+		});
+	} else {
+		$('.reveal, .reveal-stagger').addClass('is-visible');
+	}
+
+	// Live search/filter for the tool catalog on services.html
+	var $toolSearch = $('#tool-search');
+	if ($toolSearch.length) {
+		var $categories = $('.category');
+		var $noResults = $('#tool-search-no-results');
+		var $listingHeadings = $('.listing-heading');
+		$toolSearch.on('input', function () {
+			var query = $(this).val().trim().toLowerCase();
+			var anyVisible = false;
+			$categories.each(function () {
+				var $category = $(this);
+				var $items = $category.find('.tool-list li, .flyer-list li');
+				var categoryHasMatch = false;
+				if (!$items.length) {
+					return;
+				}
+				$items.each(function () {
+					var matches = query === '' || $(this).text().toLowerCase().indexOf(query) !== -1;
+					$(this).toggle(matches);
+					if (matches) {
+						categoryHasMatch = true;
+					}
+				});
+				$category.toggle(categoryHasMatch);
+				if (categoryHasMatch) {
+					anyVisible = true;
+				}
+			});
+			if ($noResults.length) {
+				$noResults.toggle(query !== '' && !anyVisible);
+			}
+			// Hide the big "Service Listing" / "Tool Rental Listing" banners while
+			// searching so results aren't pushed below the fold on mobile.
+			$listingHeadings.toggle(query === '');
+		});
+
+		// Category chips: clear any active search first, then scroll to that section,
+		// so a filtered-out section is never jumped to while still hidden.
+		$('.category-chips a').on('click', function (e) {
+			e.preventDefault();
+			var targetId = $(this).attr('href');
+			if ($toolSearch.val() !== '') {
+				$toolSearch.val('').trigger('input');
+			}
+			var $target = $(targetId);
+			if ($target.length) {
+				var navHeight = $('.navigation').outerHeight() || 0;
+				$('html, body').animate({
+					scrollTop: $target.offset().top - navHeight - 16
+				}, 400);
+			}
+		});
+	}
 
 });

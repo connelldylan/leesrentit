@@ -72,12 +72,26 @@
       color: #fff;
       padding: 2%;
       border: 4px solid #000;
+      border-radius: var(--radius-md);
     }
     .category {
       margin-bottom: 40px;
       border: 1px solid #ddd;
       background-color: #f9f9f9;
       padding: 15px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      transition: transform .35s ease, box-shadow .35s ease, opacity .6s ease;
+    }
+    .category:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-elevated);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .category:hover {
+        transform: none;
+      }
     }
     .category h2 {
       background-color: #9a042f;
@@ -94,6 +108,7 @@
     .tool-list li {
       padding: 10px;
       border: 1px solid #ddd;
+      border-radius: var(--radius-md);
       flex: 1 1 45%;
       box-sizing: border-box;
       margin: 5px;
@@ -120,7 +135,7 @@
             </a>
 
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="ion-android-menu"></span>
+              <span class="hamburger-box"><span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span></span>
             </button>
 
             <div class="collapse navbar-collapse ml-auto" id="navbarsExample09">
@@ -157,9 +172,26 @@
   </div>
   </header>
 
+  <!-- Tool search -->
+  <div class="container" style="padding-top: 25vh; width: 93%">
+    <div class="tool-search-bar bubble-card reveal">
+      <i class="fas fa-search"></i>
+      <input type="search" id="tool-search" placeholder="Search tools & equipment…" aria-label="Search tools and equipment">
+    </div>
+    <div class="category-chips reveal">
+      <a href="#contractor">Contractor</a>
+      <a href="#lawn-garden">Lawn & Garden</a>
+      <a href="#miscellaneous">Miscellaneous</a>
+      <a href="#party">Party</a>
+      <a href="#trailers">Trailers</a>
+      <a href="#general-rentals">General Rentals</a>
+    </div>
+    <p id="tool-search-no-results">No tools found. Try a different search term, or <a href="mailto:leesrentit@outlook.com">ask us</a> — we may still have it in stock.</p>
+  </div>
+
   <!-- Small Engine Repair – Flyer Section -->
-<div class="container" style="padding-top: 25vh; width: 93%" id="small-engine-flyer">
-  <h1 style="background-color: #9a042f; margin-bottom: 0;">Service Listing</h1>
+<div class="container reveal" style="padding-top: 1vh; width: 93%" id="small-engine-flyer">
+  <h1 class="listing-heading" style="background-color: #9a042f; margin-bottom: 0;">Service Listing</h1>
 
   <div class="category" style="background-color: white; text-align: center;">
     <h3 class="flyer-line">Small Engine Repair</h3>
@@ -179,11 +211,11 @@
 </div>
 
   <div class="container" style="padding-top: 1vh; width: 93%">
-    <h1 style="background-color: #9a042f;">Tool Rental Listing</h1>
+    <h1 class="listing-heading" style="background-color: #9a042f;">Tool Rental Listing</h1>
 
-    <div class="category" id="contractor">
-      <h2>Contractor</h2>
-      <ul class="tool-list">
+    <div class="category reveal" id="contractor">
+      <h2><i class="fas fa-hard-hat"></i>Contractor</h2>
+      <ul class="tool-list reveal-stagger">
         <li>Air Compressors (All types)</li>
         <li>Air Tools (Assorted)</li>
         <li>Airless Paint Sprayers</li>
@@ -299,9 +331,9 @@
       </section>
     </div>
 
-    <div class="category" id="lawn-garden">
-      <h2>Lawn & Garden</h2>
-      <ul class="tool-list">
+    <div class="category reveal" id="lawn-garden">
+      <h2><i class="fas fa-leaf"></i>Lawn & Garden</h2>
+      <ul class="tool-list reveal-stagger">
         <li>Aerators (Gas & Manual)</li>
         <li>Bed Edgers</li>
         <li>Chippers</li>
@@ -475,18 +507,18 @@
       </section>
     </div>
 
-    <div class="category" id="miscellaneous">
-      <h2>Miscellaneous</h2>
-      <ul class="tool-list">
+    <div class="category reveal" id="miscellaneous">
+      <h2><i class="fas fa-boxes"></i>Miscellaneous</h2>
+      <ul class="tool-list reveal-stagger">
         <li>Animal Cages</li>
         <li>Animal Traps (Small & Large)</li>
         <li>Fans (Pedestal & Carpet)</li>
       </ul>
     </div>
 
-    <div class="category" id="party">
-      <h2>Party</h2>
-      <ul class="tool-list">
+    <div class="category reveal" id="party">
+      <h2><i class="fas fa-utensils"></i>Party</h2>
+      <ul class="tool-list reveal-stagger">
         <li>Chairs (Folding)</li>
         <li>Coffee Maker</li>
         <li>Grills (Open & Closed)</li>
@@ -497,9 +529,9 @@
       </ul>
     </div>
 
-    <div class="category" id="trailers">
-      <h2>Trailers</h2>
-      <ul class="tool-list">
+    <div class="category reveal" id="trailers">
+      <h2><i class="fas fa-truck-moving"></i>Trailers</h2>
+      <ul class="tool-list reveal-stagger">
         <li>Bar Lights (Rental)</li>
         <li>Loading Ramps</li>
         <li>Tow Chains (Assorted)</li>
@@ -584,9 +616,9 @@
       </section>
     </div>
 
-    <div class="category" id="general-rentals">
-      <h2>General Rentals</h2>
-      <ul class="tool-list">
+    <div class="category reveal" id="general-rentals">
+      <h2><i class="fas fa-toolbox"></i>General Rentals</h2>
+      <ul class="tool-list reveal-stagger">
         <li>Air tanks (portable)</li>
         <li>Auto Polishers/Sanders</li>
         <li>Ball Joint Presses</li>
@@ -718,7 +750,7 @@
   </div>
 
   <footer class="footer" style="color: #fff;">
-    <div class="container" style="background-color: #fff; width: 80%; margin: 0 auto; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+    <div class="container bubble-card" style="background-color: #fff; width: 80%; margin: 0 auto; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
       <div class="row">
         <div class="col-md-12">
           <p class="copyright mb-0">

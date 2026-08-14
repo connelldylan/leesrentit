@@ -224,4 +224,59 @@ $(document).ready(function () {
 		});
 	}
 
+	// Photo galleries use loading="lazy" so a gallery a user never scrolls to
+	// never costs anything, but that means an untouched slide's image only
+	// starts fetching the instant it's needed. To avoid a blank/loading gap
+	// while clicking through a carousel, warm the browser's cache for the
+	// slide(s) just ahead of the current one, both as soon as the gallery
+	// scrolls near the viewport and again every time the user advances.
+	$('.carousel').each(function () {
+		var $carousel = $(this);
+		var $items = $carousel.find('.carousel-item');
+		var activeIndex = $items.index($carousel.find('.carousel-item.active'));
+
+		function preload(index) {
+			if (index < 0 || index >= $items.length) {
+				return;
+			}
+			var img = $items.eq(index).find('img')[0];
+			if (img && img.getAttribute('src')) {
+				new Image().src = img.getAttribute('src');
+			}
+		}
+
+		function preloadAround(index) {
+			preload(index + 1);
+			preload(index - 1);
+		}
+
+		if ('IntersectionObserver' in window) {
+			var carouselObserver = new IntersectionObserver(function (entries, observer) {
+				entries.forEach(function (entry) {
+					if (entry.isIntersecting) {
+						preloadAround($items.index($carousel.find('.carousel-item.active')));
+						observer.unobserve(entry.target);
+					}
+				});
+			}, { rootMargin: '600px 0px 600px 0px' });
+			carouselObserver.observe(this);
+		}
+
+		// "current / total" slide counter, top-right of the gallery
+		var total = $items.length;
+		var $counter = null;
+		if (total > 1) {
+			$counter = $('<div class="carousel-counter" aria-hidden="true"></div>')
+				.text((activeIndex + 1) + ' / ' + total)
+				.appendTo($carousel);
+		}
+
+		$carousel.on('slide.bs.carousel', function (e) {
+			preloadAround(e.to);
+			if ($counter) {
+				$counter.text((e.to + 1) + ' / ' + total);
+			}
+		});
+	});
+
 });

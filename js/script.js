@@ -262,7 +262,7 @@ $(document).ready(function () {
 			carouselObserver.observe(this);
 		}
 
-		// "current / total" slide counter, top-right of the gallery
+		// "current / total" slide counter, top-left of the gallery
 		var total = $items.length;
 		var $counter = null;
 		if (total > 1) {
@@ -275,6 +275,46 @@ $(document).ready(function () {
 			preloadAround(e.to);
 			if ($counter) {
 				$counter.text((e.to + 1) + ' / ' + total);
+			}
+		});
+
+		// Fullscreen toggle button, top-right of the gallery. Uses a CSS
+		// overlay (position: fixed) rather than the native Fullscreen API,
+		// since iOS Safari doesn't reliably support requestFullscreen() on
+		// plain elements. A fixed-position element is only positioned
+		// relative to the true viewport if none of its ancestors have an
+		// active transform (our scroll-reveal system sets translateY(0) on
+		// .category once revealed, which otherwise traps it) — so on
+		// entering fullscreen we detach the carousel and re-append it
+		// directly to <body>, then move it back to its original spot on exit.
+		var $fullscreenBtn = $(
+			'<button type="button" class="carousel-fullscreen-btn" aria-label="View fullscreen">' +
+			'<i class="fas fa-expand" aria-hidden="true"></i></button>'
+		).appendTo($carousel);
+		var $placeholder = $('<span style="display:none"></span>').insertAfter($carousel);
+
+		function exitCarouselFullscreen() {
+			$carousel.removeClass('carousel-fullscreen-active');
+			$placeholder.after($carousel);
+			$('body').removeClass('carousel-fullscreen-open');
+			$fullscreenBtn.attr('aria-label', 'View fullscreen')
+				.find('i').removeClass('fa-compress').addClass('fa-expand');
+		}
+
+		$fullscreenBtn.on('click', function () {
+			if ($carousel.hasClass('carousel-fullscreen-active')) {
+				exitCarouselFullscreen();
+				return;
+			}
+			$carousel.addClass('carousel-fullscreen-active').appendTo('body');
+			$('body').addClass('carousel-fullscreen-open');
+			$fullscreenBtn.attr('aria-label', 'Exit fullscreen')
+				.find('i').removeClass('fa-expand').addClass('fa-compress');
+		});
+
+		$(document).on('keydown', function (e) {
+			if (e.key === 'Escape' && $carousel.hasClass('carousel-fullscreen-active')) {
+				exitCarouselFullscreen();
 			}
 		});
 	});

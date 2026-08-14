@@ -1074,7 +1074,7 @@ a:hover {
 .carousel-counter {
   position: absolute;
   top: 12px;
-  right: 12px;
+  left: 12px;
   z-index: 15;
   background: rgba(0, 0, 0, 0.55);
   color: #fff;
@@ -1086,8 +1086,71 @@ a:hover {
   pointer-events: none;
 }
 
+.carousel-fullscreen-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  border: 0;
+  border-radius: 50%;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.carousel-fullscreen-btn:hover,
+.carousel-fullscreen-btn:focus {
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  outline: 0;
+}
+
 .carousel-item {
   height: 600px; /* Set a fixed height for the carousel */
+}
+
+/* Fullscreen gallery view (CSS-driven overlay, not the native Fullscreen
+   API — iOS Safari doesn't reliably support requestFullscreen() on plain
+   elements, only a fixed-position overlay works consistently everywhere). */
+body.carousel-fullscreen-open {
+  overflow: hidden;
+}
+.carousel.carousel-fullscreen-active {
+  position: fixed;
+  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  margin: 0;
+  z-index: 2000;
+  border-radius: 0;
+  box-shadow: none;
+  background: #000;
+}
+.carousel.carousel-fullscreen-active .carousel-item,
+.carousel.carousel-fullscreen-active .carousel-inner {
+  height: 100vh;
+}
+.carousel.carousel-fullscreen-active .carousel-item img {
+  object-fit: contain;
+  background: #000;
+}
+.carousel.carousel-fullscreen-active:hover .carousel-item img {
+  transform: none;
+}
+@media (max-width: 768px) {
+  .carousel.carousel-fullscreen-active {
+    width: 100vw;
+  }
 }
 
 .carousel-item img {
